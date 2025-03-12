@@ -52,6 +52,12 @@
   font-style: italic;
 }
 
+// Body
+body {
+  font-family: $font-primary;
+  font-weight: 400;
+}
+
 // Headings
 h1 {
   font-family: $font-display;
@@ -143,5 +149,21 @@ p {
   @include tablet {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+}
+
+.small-text {
+  font-family: $font-primary;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  @include tablet {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
