@@ -1,3 +1,4 @@
+// Primary font - DM Sans
 @font-face {
   font-family: "DM Sans";
   src: url("/src/assets/fonts/dm-sans-v15-latin-regular.woff2") format("woff2");
@@ -31,4 +32,20 @@
   src: url("/src/assets/fonts/dm-sans-v15-latin-700.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
+}
+
+// Display font - DM Serif Display
+
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/src/assets/fonts/dm-serif-display-v15-latin-regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/src/assets/fonts/dm-serif-display-v15-latin-italic.woff2");
+  font-weight: 400;
+  font-style: italic;
 }
