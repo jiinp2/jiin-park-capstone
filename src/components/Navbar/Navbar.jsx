@@ -2,7 +2,11 @@ import React from "react";
 import "./Navbar.scss";
 
 function Navbar() {
-  return <div>Navbar</div>;
+  return (
+    <header>
+      <h2>Focal</h2>
+    </header>
+  );
 }
 
 export default Navbar;

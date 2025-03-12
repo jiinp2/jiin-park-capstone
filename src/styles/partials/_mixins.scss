@@ -1,4 +1,4 @@
-@use "./variables";
+@use "./variables" as *;
 
 // Breakpoints
 @mixin mobile {
@@ -16,6 +16,24 @@
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
+  }
+}
+
+// Margins
+@mixin margin {
+  max-width: 80rem;
+  margin: 0;
+
+  @include mobile {
+    margin: $spacing-md $spacing-sm;
+  }
+
+  @include tablet {
+    margin: $spacing-lg $spacing-md;
+  }
+
+  @include desktop {
+    margin: $spacing-lg auto;
   }
 }
 
