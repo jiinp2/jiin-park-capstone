@@ -1,6 +1,6 @@
-@use "./mixins" as *;
-@use "./typography" as *;
-@use "./variables" as *;
+@forward "./partials/mixins";
+@forward "./partials/typography";
+@forward "./partials/variables";
 
 * {
   margin: 0;
