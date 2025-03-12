@@ -1,3 +1,6 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
 // Primary font - DM Sans
 @font-face {
   font-family: "DM Sans";
@@ -35,7 +38,6 @@
 }
 
 // Display font - DM Serif Display
-
 @font-face {
   font-family: "DM Serif Display";
   src: url("/src/assets/fonts/dm-serif-display-v15-latin-regular.woff2");
@@ -48,4 +50,98 @@
   src: url("/src/assets/fonts/dm-serif-display-v15-latin-italic.woff2");
   font-weight: 400;
   font-style: italic;
+}
+
+// Headings
+h1 {
+  font-family: $font-display;
+  font-weight: 400;
+
+  @include mobile {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+
+  @include tablet {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+
+h2 {
+  font-family: $font-display;
+  font-weight: 400;
+
+  @include mobile {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  @include tablet {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+h3 {
+  font-family: $font-display;
+  font-weight: 400;
+
+  @include mobile {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+h4 {
+  font-family: $font-display;
+  font-weight: 400;
+
+  @include mobile {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+h5 {
+  font-family: $font-display;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  @include tablet {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+// Body
+
+p {
+  font-family: $font-primary;
+  font-weight: 400;
+
+  @include mobile {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  @include tablet {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
