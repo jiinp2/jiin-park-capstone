@@ -1,0 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  @include flex-column;
+  gap: $spacing-md;
+  @include margin;
+
+  &__button {
+    padding: $spacing-sm $spacing-md;
+  }
+}
