@@ -2,5 +2,6 @@
 
 .upload {
   @include flex-column;
+  gap: $spacing-md;
   @include margin;
 }

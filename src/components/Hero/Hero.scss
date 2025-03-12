@@ -6,8 +6,4 @@
   @include flex-column;
   gap: $spacing-md;
   @include margin;
-
-  &__button {
-    padding: $spacing-sm $spacing-md;
-  }
 }
