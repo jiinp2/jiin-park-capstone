@@ -13,6 +13,34 @@ function Upload() {
     console.log("Files recieved:", files);
   };
 
+  // Fetch metadata
+  const fetchMetadata = async (imagePaths) => {
+    if (!imagePaths || imagePaths.length === 0) {
+      console.log("No images provided.");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/metatdata`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ imagePaths }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch metadata");
+      }
+
+      const { metadata } = await response.json();
+      console.log("Extracted metadata:", metadata);
+    } catch (error) {
+      console.error("Error fetching metatdata:", error.message);
+    }
+  };
+
   // Handle file upload
   const handleUpload = async () => {
     if (!selectedFiles.length) return alert("No files selected.");
