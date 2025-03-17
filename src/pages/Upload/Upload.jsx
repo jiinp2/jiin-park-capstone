@@ -13,38 +13,6 @@ function Upload() {
     console.log("Files recieved:", files);
   };
 
-  // Hanlde uploading files to Supabase
-  const handleUpload = async () => {
-    if (!selectedFiles.length) return alert("No files selected.");
-    setUploading(true);
-
-    // Store file urls
-    const uploadedFiles = [];
-
-    for (const file of selectedFiles) {
-      // Uploading file(s) to Supabase
-      const { data, error } = await supabase.storage
-        .from("uploads")
-        .upload(`images/{file.name}`, file);
-
-      if (error) {
-        console.error("Upload error:", error);
-      } else {
-        // Get public URL of uploaded file(s)
-        const imageUrl = supabase.storage
-          .from("uploads")
-          .getPublicUrl(`images/${file.name}`).data.publicUrl;
-        uploadedFiles.push(imageUrl);
-      }
-    }
-
-    setUploading(false);
-    setSelectedFiles([]);
-
-    // Fetch backend API to extract metadata
-    fetchMetadata(uploadedFiles);
-  };
-
   return (
     <section className="upload">
       <h1>Upload Your Photos</h1>
