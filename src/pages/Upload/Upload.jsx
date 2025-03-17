@@ -13,6 +13,34 @@ function Upload() {
     console.log("Files recieved:", files);
   };
 
+  // Handle file upload
+  const handleUpload = async () => {
+    if (!selectedFiles.length) return alert("No files selected.");
+    setUploading(true);
+
+    const formData = new FormData();
+    selectedFiles.forEach((file) => formData.append("images", file));
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/upload`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+      console.log("Server response:", data);
+
+      setUploading(false);
+      setSelectedFiles([]);
+    } catch (error) {
+      console.error("Upload error:", error);
+      setUploading(false);
+    }
+  };
+
   return (
     <section className="upload">
       <h1>Upload Your Photos</h1>
