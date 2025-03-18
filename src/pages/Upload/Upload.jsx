@@ -2,7 +2,7 @@ import { useState } from "react";
 import Dropzone from "../../components/Dropzone/Dropzone";
 import "./Upload.scss";
 
-function Upload() {
+const Upload = () => {
   // State to store files
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -22,7 +22,7 @@ function Upload() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/metatdata`,
+        `${import.meta.env.VITE_API_URL}/api/metadata`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -58,14 +58,19 @@ function Upload() {
         }
       );
 
-      const data = await response.json();
-      console.log("Server response:", data);
+      if (!response.ok) {
+        throw new Error("Upload failed");
+      }
 
-      setUploading(false);
-      setSelectedFiles([]);
+      const { imagePaths } = await response.json();
+      console.log("Server response:", imagePaths);
+
+      await fetchMetadata(imagePaths);
     } catch (error) {
       console.error("Upload error:", error);
+    } finally {
       setUploading(false);
+      setSelectedFiles([]);
     }
   };
 
@@ -74,9 +79,11 @@ function Upload() {
       <h1>Upload Your Photos</h1>
       <p>Start building your travel log by adding photos from your journey.</p>
       <Dropzone onFilesSelected={handleFilesSelected} />
-      <button>Create Log</button>
+      <button onClick={handleUpload} disabled={uploading}>
+        Create Log
+      </button>
     </section>
   );
-}
+};
 
 export default Upload;

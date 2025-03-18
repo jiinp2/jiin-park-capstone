@@ -2,7 +2,23 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
-header {
+.header {
   @include flex-row;
+  align-items: center;
+  gap: $spacing-xs;
   @include margin;
+
+  @include tablet {
+    gap: $spacing-sm;
+  }
+
+  &__logo {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    @include tablet {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 }
