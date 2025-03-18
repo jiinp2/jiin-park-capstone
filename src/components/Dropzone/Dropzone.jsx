@@ -12,6 +12,8 @@ function Dropzone({ onFilesSelected }) {
     },
     accept: {
       "image/jpeg": [],
+      "image/png": [],
+      "image/webp": [],
     },
     multiple: true,
     maxFiles: 8,
