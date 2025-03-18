@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Dropzone from "../../components/Dropzone/Dropzone";
+import Dropzone from "react-dropzone";
 import "./Upload.scss";
 
 const Upload = () => {
@@ -37,13 +37,16 @@ const Upload = () => {
       const { metadata } = await response.json();
       console.log("Extracted metadata:", metadata);
     } catch (error) {
-      console.error("Error fetching metatdata:", error.message);
+      console.error("Error fetching metadata:", error.message);
     }
   };
 
   // Handle file upload
   const handleUpload = async () => {
-    if (!selectedFiles.length) return alert("No files selected.");
+    if (!selectedFiles.length) {
+      alert("No files selected.");
+      return;
+    }
     setUploading(true);
 
     const formData = new FormData();
@@ -66,11 +69,11 @@ const Upload = () => {
       console.log("Server response:", imagePaths);
 
       await fetchMetadata(imagePaths);
+      setSelectedFiles([]);
     } catch (error) {
       console.error("Upload error:", error);
     } finally {
       setUploading(false);
-      setSelectedFiles([]);
     }
   };
 

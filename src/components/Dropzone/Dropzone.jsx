@@ -3,9 +3,13 @@ import "./Dropzone.scss";
 
 function Dropzone({ onFilesSelected }) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop: (acceptedFiles) => {
-      onFilesSelected(acceptedFiles);
+    onDrop: (acceptedFiles) => onFilesSelected(acceptedFiles),
+    accept: {
+      "image/*": [],
+      "image/heif": [],
+      "image/heic": [],
     },
+    multiple: true,
   });
 
   return (
