@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Dropzone from "../../components/Dropzone/Dropzone";
 import "./Upload.scss";
 
@@ -6,6 +7,7 @@ const Upload = () => {
   // State to store files
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
+  const navigate = useNavigate();
 
   // Handle files from Dropzone
   const handleFilesSelected = (files) => {
@@ -23,9 +25,7 @@ const Upload = () => {
 
     const formData = new FormData();
 
-    // Converting files into an array
-    const filesArray = Array.from(selectedFiles);
-    filesArray.forEach((file) => {
+    selectedFiles.forEach((file) => {
       formData.append("images", file);
     });
 
@@ -42,8 +42,19 @@ const Upload = () => {
         throw new Error("Upload failed");
       }
 
-      const { imagePaths } = await response.json();
-      console.log("Upload successful, stored images:", imagePaths);
+      // Extract logId from backend
+      const data = await response.json();
+      console.log("Full response from backend:", data);
+      const { logId } = data;
+
+      if (!logId) {
+        throw new Error("logId not received from server");
+      }
+
+      console.log("Upload successful, logId:", logId);
+
+      // Navigate to next page with logId
+      navigate(`/next-page/${logId}`);
 
       setSelectedFiles([]);
     } catch (error) {
