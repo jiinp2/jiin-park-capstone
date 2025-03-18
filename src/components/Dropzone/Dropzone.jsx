@@ -3,11 +3,18 @@ import "./Dropzone.scss";
 
 function Dropzone({ onFilesSelected }) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop: (acceptedFiles) => onFilesSelected(acceptedFiles),
+    onDrop: (acceptedFiles) => {
+      if (acceptedFiles.length > 8) {
+        alert("You can only upload up to 8 images.");
+        return;
+      }
+      onFilesSelected(acceptedFiles);
+    },
     accept: {
       "image/jpeg": [],
     },
     multiple: true,
+    maxFiles: 8,
   });
 
   return (
