@@ -47,12 +47,10 @@ const Upload = () => {
       alert("No files selected.");
       return;
     }
-    console.log("Selected files before upload:", selectedFiles);
     setUploading(true);
 
     const formData = new FormData();
     selectedFiles.forEach((file) => {
-      console.log("Appending file to formData:", file);
       formData.append("images", file);
     });
 
@@ -70,7 +68,6 @@ const Upload = () => {
       }
 
       const { imagePaths } = await response.json();
-      console.log("Server response:", imagePaths);
 
       await fetchMetadata(imagePaths);
       setSelectedFiles([]);

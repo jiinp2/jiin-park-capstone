@@ -3,21 +3,9 @@ import "./Dropzone.scss";
 
 function Dropzone({ onFilesSelected }) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop: (acceptedFiles) => {
-      console.log("Raw accepted files:", acceptedFiles);
-
-      const processedFiles = acceptedFiles.map(
-        (file) => new File([file], file.name, { type: file.type })
-      );
-
-      console.log("Processed files:", processedFiles);
-      onFilesSelected(processedFiles);
-    },
-
+    onDrop: (acceptedFiles) => onFilesSelected(acceptedFiles),
     accept: {
-      "image/*": [],
-      "image/heif": [],
-      "image/heic": [],
+      "image/jpeg": [],
     },
     multiple: true,
   });
