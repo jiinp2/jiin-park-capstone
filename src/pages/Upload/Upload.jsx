@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Dropzone from "react-dropzone";
+import Dropzone from "../../components/Dropzone/Dropzone";
 import "./Upload.scss";
 
 const Upload = () => {
@@ -47,10 +47,14 @@ const Upload = () => {
       alert("No files selected.");
       return;
     }
+    console.log("Selected files before upload:", selectedFiles);
     setUploading(true);
 
     const formData = new FormData();
-    selectedFiles.forEach((file) => formData.append("images", file));
+    selectedFiles.forEach((file) => {
+      console.log("Appending file to formData:", file);
+      formData.append("images", file);
+    });
 
     try {
       const response = await fetch(
