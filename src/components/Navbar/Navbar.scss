@@ -5,10 +5,12 @@
 .header {
   @include flex-row;
   align-items: center;
+  justify-content: center;
   gap: $spacing-xs;
   @include margin;
 
   @include tablet {
+    justify-content: flex-start;
     gap: $spacing-sm;
   }
 
