@@ -3,6 +3,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "./LogMap.scss";
+import ImageMarker from "../ImageMarker/Imagemarker";
 
 const LogMap = ({ images }) => {
   // Filter images that have coordinates
@@ -44,16 +45,12 @@ const LogMap = ({ images }) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         {validLocations.map((image, index) => (
-          <Marker key={index} position={[image.latitude, image.longitude]}>
-            <Popup>
-              <img
-                src={`${import.meta.env.VITE_API_URL}${image.file_path}`}
-                alt="Uploaded"
-                width="100"
-              />
-              <p>Timestamp: {image.timestamp}</p>
-            </Popup>
-          </Marker>
+          <ImageMarker
+            key={index}
+            latitude={image.latitude}
+            longitude={image.longitude}
+            imageUrl={`${import.meta.env.VITE_API_URL}${image.file_path}`}
+          />
         ))}
       </MapContainer>
     </div>

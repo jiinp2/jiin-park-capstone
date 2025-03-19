@@ -1,13 +1,16 @@
 import { useEffect } from "react";
+import { useMap } from "react-leaflet";
 import L from "leaflet";
 import "./ImageMarker.scss";
 
-const ImageMarker = ({ map, latitude, longitude, imageUrl }) => {
+const ImageMarker = ({ latitude, longitude, imageUrl }) => {
+  const map = useMap();
+
   useEffect(() => {
     if (!map || !latitude || !longitude || !imageUrl) return;
 
     const markerIcon = L.divIcon({
-      html: `<div style="background-image: url('${imageUrl}');"></div>`,
+      html: `<div class="image-marker" style="background-image: url('${imageUrl}');"></div>`,
       className: "",
       iconSize: [40, 40],
       iconAnchor: [20, 40],
