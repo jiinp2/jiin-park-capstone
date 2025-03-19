@@ -54,7 +54,7 @@ const Upload = () => {
       console.log("Upload successful, logId:", logId);
 
       // Navigate to next page with logId
-      navigate(`/next-page/${logId}`);
+      navigate(`/log/${logId}/edit`);
 
       setSelectedFiles([]);
     } catch (error) {
@@ -71,7 +71,6 @@ const Upload = () => {
       <Dropzone onFilesSelected={handleFilesSelected} />
       <button onClick={handleUpload} disabled={uploading}>
         {uploading ? "Uploading..." : "Create Log"}
-        Create Log
       </button>
     </section>
   );

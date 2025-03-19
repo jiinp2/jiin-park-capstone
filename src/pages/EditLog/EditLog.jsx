@@ -5,26 +5,49 @@ import "./EditLog.scss";
 const EditLog = () => {
   const { logId } = useParams();
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [notes, setNotes] = useState("");
 
   useEffect(() => {
-    console.log("Navigated to edit log with ID:", logId);
-    // TODO: Fetch imahes and exisiting log data here
+    const fetchImages = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/logs/${logId}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch images");
+        }
+
+        const data = await response.json();
+        console.log("Fetched images:", data.images);
+        setImages(data.images);
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchImages();
   }, [logId]);
 
+  if (loading) return <p>Loading images...</p>;
+
   return (
-    <section>
-      <h1>Edit Your Travel Log</h1>
-      <p>Log ID: {logId}</p>
+    <section className="edit-log">
+      <h1>Edit</h1>
       <div>
         <h2>Map Placeholder</h2>
         {/* TODO: Add Leaflet map component here */}
       </div>
-      <div>
-        <h2>Uploaded Images</h2>
+      <div className="images-container">
         {images.length ? (
           images.map((image) => (
-            <img key={image.imageID} src={image.filePath} alt="Uploaded" />
+            <img
+              key={`${image.imageID || image.file_path}-${Math.random()}`}
+              src={`${import.meta.env.VITE_API_URL}${image.file_path}`}
+              alt="Uploaded"
+            />
           ))
         ) : (
           <p>No images found.</p>
