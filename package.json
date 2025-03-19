@@ -15,10 +15,13 @@
     "exif-js": "^2.3.0",
     "exif-parser": "^0.1.12",
     "knex": "^3.1.0",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
     "mysql2": "^3.13.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-dropzone": "^14.3.8",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.3.0",
     "sass": "^1.85.1",
     "sharp": "^0.33.5"
