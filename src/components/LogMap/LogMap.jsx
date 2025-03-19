@@ -1,12 +1,11 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "./LogMap.scss";
 
 const LogMap = ({ images }) => {
-  // filter images that have coordinates
+  // Filter images that have coordinates
   const validLocations = images.filter(
     (image) => image.latitude && image.longitude
   );
