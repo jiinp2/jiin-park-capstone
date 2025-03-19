@@ -35,8 +35,10 @@ const LogMap = ({ images }) => {
         style={{ height: "400px", width: "100%" }}
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url={`https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}${
+            window.devicePixelRatio > 1 ? "@2x" : ""
+          }.png?access-token=LpVh1eoiT9vQkwkgzhXoniCljNNGrTvAvCxnBjPqEQnK9HXEvUtIzC2pVMJ2KnF2`}
+          attribution='&copy; <a href="https://www.jawg.io/">Jawg Maps</a> &copy; OpenStreetMap contributors'
         />
         {validLocations.map((image, index) => (
           <Marker key={index} position={[image.latitude, image.longitude]}>

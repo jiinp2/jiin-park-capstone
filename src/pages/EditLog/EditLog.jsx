@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import MapDisplay from "../../components/LogMap/LogMap";
 import "./EditLog.scss";
+import LogMap from "../../components/LogMap/LogMap";
 
 const EditLog = () => {
   const { logId } = useParams();
@@ -36,10 +38,7 @@ const EditLog = () => {
   return (
     <section className="edit-log">
       <h1>Edit</h1>
-      <div>
-        <h2>Map Placeholder</h2>
-        {/* TODO: Add Leaflet map component here */}
-      </div>
+      <LogMap images={images} />
       <div className="images-container">
         {images.length ? (
           images.map((image) => (
