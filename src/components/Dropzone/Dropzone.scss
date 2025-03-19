@@ -1,4 +1,6 @@
-@use "../../styles/global.scss" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
 
 .dropzone {
   border: 0.125rem dashed grey;
