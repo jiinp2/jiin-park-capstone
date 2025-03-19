@@ -7,8 +7,9 @@ const EditLog = () => {
   const { logId } = useParams();
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [notes, setNotes] = useState("");
+  const [imageComments, setImageComments] = useState({});
 
+  // Fetch Images
   useEffect(() => {
     const fetchImages = async () => {
       try {
