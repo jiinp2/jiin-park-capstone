@@ -28,6 +28,7 @@ const LogMap = ({ images }) => {
     <div>
       <h2>Map</h2>
       <MapContainer
+        className="map-container"
         key={mapCenter.join(",")}
         center={mapCenter}
         zoom={10}
