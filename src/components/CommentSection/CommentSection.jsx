@@ -9,11 +9,11 @@ function CommentSection({ filePath, imageComments, setImageComments }) {
   };
 
   return (
-    <div>
+    <div className="comment-section">
       <textarea
         value={imageComments[filePath] || ""}
         onChange={handleCommentChange}
-        placeholder="Add a comment for this photo..."
+        placeholder="Add a comment for this photo"
       />
     </div>
   );

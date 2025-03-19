@@ -1,1 +1,13 @@
 @use "../../styles/global.scss" as *;
+
+.comment-section {
+  width: 100%;
+
+  textarea {
+    width: 100%;
+    padding: $spacing-xs;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+}
