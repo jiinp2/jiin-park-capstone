@@ -1,0 +1,14 @@
+@use "../../styles/global.scss" as *;
+
+.footer {
+  @include flex-column;
+  padding: $spacing-xl 0;
+  gap: 2rem;
+  border-top: 0.0625rem solid $color-divider;
+  @include margin;
+
+  &__info-wrapper {
+    @include flex-column;
+    gap: $spacing-sm;
+  }
+}

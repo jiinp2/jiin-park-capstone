@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import Upload from "./pages/Upload/Upload";
 import Navbar from "./components/Navbar/Navbar";
 import EditLog from "./pages/EditLog/Editlog";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path={"/upload"} element={<Upload />} />
         <Route path={"/log/:logId/edit"} element={<EditLog />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
