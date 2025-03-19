@@ -10,15 +10,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: $spacing-sm;
-}
 
-img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  object-fit: cover;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
 
-  @include tablet {
-    max-width: 18.75rem;
+    @include tablet {
+      max-width: 18.75rem;
+    }
   }
 }
