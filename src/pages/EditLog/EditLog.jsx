@@ -40,7 +40,7 @@ const EditLog = () => {
     <section className="edit-log">
       <h1>Edit</h1>
       <LogMap images={images} />
-      <div className="images-container">
+      <div className="images-list">
         {images.length ? (
           images.map((image) => (
             <div key={image.file_path}>
