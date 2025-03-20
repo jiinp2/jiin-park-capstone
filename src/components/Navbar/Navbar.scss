@@ -5,12 +5,11 @@
 .header {
   @include flex-row;
   align-items: center;
-  justify-content: center;
   gap: $spacing-xs;
-  @include margin;
+  border-bottom: 0.0625rem solid $color-divider;
+  @include margin-x;
 
   @include tablet {
-    justify-content: flex-start;
     gap: $spacing-sm;
   }
 
@@ -22,5 +21,9 @@
       width: 2rem;
       height: 2rem;
     }
+  }
+
+  h2 {
+    font-family: $font-display;
   }
 }

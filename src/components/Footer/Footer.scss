@@ -6,7 +6,7 @@
   padding: $spacing-xl 0;
   gap: 2rem;
   border-top: 0.0625rem solid $color-divider;
-  @include margin;
+  @include margin-x;
 
   &__info-wrapper {
     @include flex-column;

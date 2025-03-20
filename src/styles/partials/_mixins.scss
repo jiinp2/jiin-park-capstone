@@ -20,20 +20,20 @@
 }
 
 // Margins
-@mixin margin {
+@mixin margin-x {
   max-width: 80rem;
   margin: 0;
 
   @include mobile {
-    margin: $spacing-md $spacing-sm;
+    margin: 0 $spacing-sm;
   }
 
   @include tablet {
-    margin: $spacing-lg $spacing-md;
+    margin: 0 $spacing-md;
   }
 
   @include desktop {
-    margin: $spacing-lg auto;
+    margin: 0 auto;
   }
 }
 
