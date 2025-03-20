@@ -12,4 +12,12 @@
   overflow: hidden;
   width: 100%;
   height: 20rem;
+
+  @include tablet {
+    height: 25rem;
+  }
+
+  @include desktop {
+    height: 35rem;
+  }
 }
