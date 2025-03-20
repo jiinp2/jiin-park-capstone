@@ -1,9 +1,10 @@
+import { format } from "date-fns";
 import "./LogDate.scss";
 
-const LogDate = ({ timestamp }) => {
-  if (!timestamp.length) return <h2>Log</h2>;
+const LogDate = ({ timestamps }) => {
+  if (!timestamps.length) return <h2 className="log-title">Log</h2>;
 
-  const sortedDates = timestamp.map((t) => new Date(t)).sort((a, b) => a - b);
+  const sortedDates = timestamps.map((t) => new Date(t)).sort((a, b) => a - b);
   const startDate = sortedDates[0];
   const endDate = sortedDates[sortedDates.length - 1];
 
@@ -12,20 +13,20 @@ const LogDate = ({ timestamp }) => {
 
   let dateRange;
   if (sameMonth) {
-    dateRange = `${format(startDate, "MMM d")}=${format(endDate, "d, yyyy")}`;
+    dateRange = `${format(startDate, "MMM d")} - ${format(endDate, "d, yyyy")}`;
   } else if (sameYear) {
     dateRange = `${format(startDate, "MMM d")} - ${format(
       endDate,
       "MMM d, yyyy"
     )}`;
   } else {
-    dateRange = `${format(startDate, "MMM yyyy")} - ${format(
+    dateRange = `${format(startDate, "MMM d, yyyy")} - ${format(
       endDate,
-      "MMM yyyy"
+      "MMM d, yyyy"
     )}`;
   }
 
-  return <h2>{dateRange}</h2>;
+  return <h2 className="log-title">{dateRange}</h2>;
 };
 
 export default LogDate;

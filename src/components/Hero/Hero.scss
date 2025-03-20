@@ -4,6 +4,16 @@
 
 .hero {
   @include flex-column;
+  align-items: center;
+  padding: $spacing-xl $spacing-sm;
   gap: $spacing-md;
   @include margin-x;
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
 }

@@ -3,9 +3,11 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "./LogMap.scss";
-import ImageMarker from "../ImageMarker/Imagemarker";
+import ImageMarker from "../ImageMarker/ImageMarker";
+import LogDate from "../LogDate/LogDate";
 
 const LogMap = ({ images }) => {
+  const timestamps = images.map((img) => img.timestamp).filter(Boolean);
   // Filter images that have coordinates
   const validLocations = images.filter(
     (image) => image.latitude && image.longitude
@@ -26,7 +28,7 @@ const LogMap = ({ images }) => {
 
   return (
     <div className="map-wrapper">
-      <h2>Map</h2>
+      <LogDate timestamps={timestamps} />
       <MapContainer
         className="map-container"
         key={mapCenter.join(",")}
