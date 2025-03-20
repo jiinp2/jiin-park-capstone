@@ -7,7 +7,7 @@ function Navbar() {
     <header>
       <Link to="/" className="header">
         <img src={logo} alt="logo" />
-        <h2>Focal</h2>
+        <h2 className="logo-text">Focal</h2>
       </Link>
     </header>
   );

@@ -12,6 +12,11 @@ body {
   background-color: $color-bg;
 }
 
+.logo-text {
+  font-family: $font-display;
+  font-size: 2rem;
+}
+
 .button {
   &--primary {
     border: none;
