@@ -4,11 +4,17 @@
 
 .header {
   @include flex-row;
-  padding: $spacing-sm 0;
   align-items: center;
-  gap: $spacing-xs;
+  justify-content: space-between;
+  padding: $spacing-sm 0;
   border-bottom: 0.0625rem solid $color-divider;
   @include margin-x;
+
+  &__logo-wrapper {
+    @include flex-row;
+    align-items: center;
+    gap: $spacing-xs;
+  }
 
   &__logo {
     width: 1.5rem;

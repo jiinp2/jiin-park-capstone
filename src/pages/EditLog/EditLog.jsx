@@ -43,7 +43,6 @@ const EditLog = () => {
         {images.length ? (
           images.map((image) => (
             <div key={image.file_path}>
-              {" "}
               <img
                 key={`${image.imageID || image.file_path}-${Math.random()}`}
                 src={`${import.meta.env.VITE_API_URL}${image.file_path}`}

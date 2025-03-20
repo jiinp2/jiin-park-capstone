@@ -7,4 +7,18 @@
   padding: $spacing-xl $spacing-sm $spacing-6xl $spacing-sm;
   gap: $spacing-md;
   @include margin-x;
+
+  &__submit {
+    @include flex-column;
+    align-items: center;
+    gap: $spacing-md;
+
+    button {
+      width: 100%;
+
+      @include tablet {
+        width: fit-content;
+      }
+    }
+  }
 }

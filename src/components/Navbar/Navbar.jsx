@@ -4,11 +4,12 @@ import logo from "../../assets/icons/logo-v2.svg";
 
 function Navbar() {
   return (
-    <header>
-      <Link to="/" className="header">
+    <header className="header">
+      <Link to="/" className="header__logo-wrapper">
         <img src={logo} alt="logo" />
         <h2 className="logo-text">Focal</h2>
       </Link>
+      <button className="button--secondary">Login</button>
     </header>
   );
 }
