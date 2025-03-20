@@ -38,7 +38,6 @@ const EditLog = () => {
 
   return (
     <section className="edit-log">
-      <h1>Edit</h1>
       <LogMap images={images} />
       <div className="images-list">
         {images.length ? (
