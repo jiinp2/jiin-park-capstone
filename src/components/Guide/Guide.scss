@@ -1,0 +1,11 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.guide {
+  @include flex-column;
+  align-items: center;
+  padding: $spacing-xl $spacing-sm;
+  gap: $spacing-md;
+  @include margin-x;
+}
