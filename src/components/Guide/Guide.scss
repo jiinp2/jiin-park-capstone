@@ -8,4 +8,47 @@
   padding: $spacing-xl $spacing-sm;
   gap: $spacing-md;
   @include margin-x;
+
+  &__steps-container {
+    @include flex-column;
+    gap: $spacing-lg;
+
+    @include tablet {
+      @include flex-row;
+      justify-content: space-between;
+      gap: $spacing-2xl;
+      padding: $spacing-md 0;
+    }
+  }
+
+  &__step-wrapper {
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-xs;
+    flex: 1;
+
+    h3 {
+      @include mobile {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+
+      @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+
+    p {
+      color: $color-font-secondary;
+    }
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-bottom: $spacing-xs;
+      stroke: $green;
+    }
+  }
 }

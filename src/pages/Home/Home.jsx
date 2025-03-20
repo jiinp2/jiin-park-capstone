@@ -4,7 +4,7 @@ import Guide from "../../components/Guide/Guide";
 
 function Home() {
   return (
-    <section>
+    <section className="content-wrapper">
       <Hero />
       <Guide />
     </section>

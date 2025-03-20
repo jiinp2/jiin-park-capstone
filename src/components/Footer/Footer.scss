@@ -8,6 +8,11 @@
   border-top: 0.0625rem solid $color-divider;
   @include margin-x;
 
+  &__logo-wrapper {
+    @include flex-row;
+    gap: $spacing-xs;
+  }
+
   &__info-wrapper {
     @include flex-column;
     gap: $spacing-sm;

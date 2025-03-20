@@ -10,10 +10,6 @@
   border-bottom: 0.0625rem solid $color-divider;
   @include margin-x;
 
-  @include tablet {
-    gap: $spacing-sm;
-  }
-
   &__logo {
     width: 1.5rem;
     height: 1.5rem;

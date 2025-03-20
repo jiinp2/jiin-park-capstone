@@ -1,6 +1,8 @@
-import { ArrowRight, Link } from "lucide-react";
+import { ArrowRight, Images, MapPinned, Users } from "lucide-react";
 
 export const Icons = {
   ArrowRight,
-  Link,
+  Images,
+  MapPinned,
+  Users,
 };
