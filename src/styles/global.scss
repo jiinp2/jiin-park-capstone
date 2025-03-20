@@ -1,6 +1,6 @@
-@forward "./partials/mixins";
-@forward "./partials/typography";
-@forward "./partials/variables";
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
 
 * {
   margin: 0;
@@ -9,13 +9,18 @@
 }
 
 body {
-  background-color: #fcfcfc;
+  background-color: $color-bg;
 }
 
-button {
-  border: none;
-  outline: none;
-  padding: 1rem 1.5rem;
+.button {
+  &--primary {
+    border: none;
+    outline: none;
+    border-radius: $radius-pill;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-button-bg;
+    color: $color-font-alternate;
+  }
 }
 
 a {

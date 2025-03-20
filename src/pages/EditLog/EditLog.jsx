@@ -61,7 +61,7 @@ const EditLog = () => {
           <p>No images found.</p>
         )}
       </div>
-      <button>Save Log</button>
+      <button className="button--primary">Save Log</button>
     </section>
   );
 };

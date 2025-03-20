@@ -8,8 +8,13 @@ $font-primary: "DM Sans", sans-serif;
 $font-display: "DM Serif Display", serif;
 
 // Colours
+$color-bg: #fcfcfc;
+
 $color-font-primary: #030712;
 $color-font-secondary: #364153;
+$color-font-alternate: #fcfcfc;
+
+$color-button-bg: #030712;
 
 $color-border: #e5e7eb;
 $color-divider: #e5e7eb;
@@ -30,3 +35,4 @@ $spacing-5xl: 4.5rem;
 $radius-xs: 0.25rem;
 $radius-sm: 0.5rem;
 $radius-md: 1rem;
+$radius-pill: 62.4375rem;
