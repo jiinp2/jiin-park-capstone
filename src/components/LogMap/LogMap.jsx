@@ -25,14 +25,13 @@ const LogMap = ({ images }) => {
       : [0, 0];
 
   return (
-    <div>
+    <div className="map-wrapper">
       <h2>Map</h2>
       <MapContainer
         className="map-container"
         key={mapCenter.join(",")}
         center={mapCenter}
         zoom={10}
-        style={{ height: "400px", width: "100%" }}
       >
         {/* <TileLayer
           url={`https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}${

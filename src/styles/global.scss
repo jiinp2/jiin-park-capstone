@@ -18,8 +18,17 @@ body {
     outline: none;
     border-radius: $radius-pill;
     padding: $spacing-sm $spacing-md;
-    background-color: $color-button-bg;
+    background-color: $color-button-primary-bg;
     color: $color-font-alternate;
+  }
+
+  &--secondary {
+    border: none;
+    outline: none;
+    border-radius: $radius-pill;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-button-secondary-bg;
+    color: $color-font-primary;
   }
 }
 

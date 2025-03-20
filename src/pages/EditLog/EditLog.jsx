@@ -61,7 +61,10 @@ const EditLog = () => {
           <p>No images found.</p>
         )}
       </div>
-      <button className="button--primary">Save Log</button>
+      <div className="edit-log__buttons">
+        <button className="button--secondary">Cancel</button>
+        <button className="button--primary">Save Log</button>
+      </div>
     </section>
   );
 };

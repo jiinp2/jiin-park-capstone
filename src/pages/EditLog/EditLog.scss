@@ -5,8 +5,18 @@
 
 .edit-log {
   @include flex-column;
+  padding: $spacing-lg 0;
   gap: $spacing-md;
   @include margin-x;
+
+  &__buttons {
+    @include flex-row;
+    gap: 0.5rem;
+
+    button {
+      width: 100%;
+    }
+  }
 }
 
 .images-list {

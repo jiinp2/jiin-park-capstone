@@ -4,6 +4,7 @@
 
 .header {
   @include flex-row;
+  padding: $spacing-sm 0;
   align-items: center;
   gap: $spacing-xs;
   border-bottom: 0.0625rem solid $color-divider;
