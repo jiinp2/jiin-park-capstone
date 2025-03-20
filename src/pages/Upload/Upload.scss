@@ -4,6 +4,7 @@
 
 .upload {
   @include flex-column;
+  padding: $spacing-xl $spacing-sm $spacing-6xl $spacing-sm;
   gap: $spacing-md;
   @include margin-x;
 }

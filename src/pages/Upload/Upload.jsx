@@ -69,7 +69,11 @@ const Upload = () => {
       <h1>Upload Your Photos</h1>
       <p>Start building your travel log by adding photos from your journey.</p>
       <Dropzone onFilesSelected={handleFilesSelected} />
-      <button onClick={handleUpload} disabled={uploading}>
+      <button
+        onClick={handleUpload}
+        disabled={uploading}
+        className="button--primary"
+      >
         {uploading ? "Uploading..." : "Create Log"}
       </button>
     </section>
