@@ -35,6 +35,34 @@ const EditLog = () => {
     fetchImages();
   }, [logId]);
 
+  const handleSaveLog = async () => {
+    if (!logId) {
+      alert("Log ID is missing.");
+      return;
+    }
+
+    const title = formatLogTitle();
+    const coverImagePath = images[0]?.file_path || "/default-cover.jpg";
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/logs`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ logId, title, coverImagePath }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save log");
+      }
+
+      navigate("/logs");
+    } catch (error) {
+      console.error("Error saving log:", error);
+    }
+  };
+
   if (loading) return <p>Loading images...</p>;
 
   return (
@@ -67,7 +95,9 @@ const EditLog = () => {
         >
           Cancel
         </button>
-        <button className="button--primary">Save Log</button>
+        <button className="button--primary" onClick={handleSaveLog}>
+          Save Log
+        </button>
       </div>
     </section>
   );
