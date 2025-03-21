@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import "./LogDate.scss";
 
-const LogDate = ({ timestamps }) => {
+const LogDate = ({ timestamps, onTitleFormat }) => {
   if (!timestamps.length) return <h2 className="log-title">Log</h2>;
 
   const sortedDates = timestamps.map((t) => new Date(t)).sort((a, b) => a - b);
@@ -25,6 +25,8 @@ const LogDate = ({ timestamps }) => {
       "MMM d, yyyy"
     )}`;
   }
+
+  onTitleFormat(dateRange);
 
   return <h2 className="log-title">{dateRange}</h2>;
 };

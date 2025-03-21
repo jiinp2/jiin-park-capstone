@@ -51,4 +51,12 @@
       stroke: $green;
     }
   }
+
+  @include tablet {
+    padding: $spacing-4xl $spacing-sm;
+  }
+
+  @include desktop {
+    padding: $spacing-6xl $spacing-sm;
+  }
 }
