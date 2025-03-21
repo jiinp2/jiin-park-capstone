@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./EditLog.scss";
 import LogMap from "../../components/LogMap/LogMap";
 import CommentSection from "../../components/CommentSection/CommentSection";
+import LogDate from "../../components/LogDate/LogDate";
 
 const EditLog = () => {
   const { logId } = useParams();
@@ -10,6 +11,7 @@ const EditLog = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [imageComments, setImageComments] = useState({});
+  const [logTitle, setLogTitle] = useState("");
 
   // Fetch Images
   useEffect(() => {
@@ -41,7 +43,7 @@ const EditLog = () => {
       return;
     }
 
-    const title = formatLogTitle();
+    const title = logTitle;
     const coverImagePath = images[0]?.file_path || "/default-cover.jpg";
 
     try {
@@ -63,10 +65,14 @@ const EditLog = () => {
     }
   };
 
-  if (loading) return <p>Loading images...</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <section className="edit-log">
+      <LogDate
+        timestamps={images.map((img) => img.timestamp)}
+        onTitleFormat={setLogTitle}
+      />
       <LogMap images={images} />
       <div className="images-list">
         {images.length ? (
