@@ -5,6 +5,7 @@ import Upload from "./pages/Upload/Upload";
 import Navbar from "./components/Navbar/Navbar";
 import EditLog from "./pages/EditLog/Editlog";
 import Footer from "./components/Footer/Footer";
+import UserLogs from "./pages/UserLogs/UserLogs";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path={"/"} element={<Home />} />
         <Route path={"/upload"} element={<Upload />} />
         <Route path={"/log/:logId/edit"} element={<EditLog />} />
+        <Route path={"/logs"} element={<UserLogs />} />
       </Routes>
       <Footer />
     </BrowserRouter>

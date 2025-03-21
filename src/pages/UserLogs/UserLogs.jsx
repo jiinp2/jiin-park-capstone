@@ -24,6 +24,12 @@ const UserLogs = () => {
     };
     fetchLogs();
   }, []);
+
+  return (
+    <section>
+      <h1>Your Logs</h1>
+    </section>
+  );
 };
 
 export default UserLogs;
