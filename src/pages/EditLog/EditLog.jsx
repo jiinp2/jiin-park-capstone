@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./EditLog.scss";
 import LogMap from "../../components/LogMap/LogMap";
 import CommentSection from "../../components/CommentSection/CommentSection";
 
 const EditLog = () => {
   const { logId } = useParams();
+  const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [imageComments, setImageComments] = useState({});
@@ -60,7 +61,12 @@ const EditLog = () => {
         )}
       </div>
       <div className="edit-log__buttons">
-        <button className="button--secondary">Cancel</button>
+        <button
+          className="button--secondary"
+          onClick={() => navigate("/upload")}
+        >
+          Cancel
+        </button>
         <button className="button--primary">Save Log</button>
       </div>
     </section>
