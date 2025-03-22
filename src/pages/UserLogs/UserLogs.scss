@@ -4,7 +4,9 @@
 
 .logs {
   @include flex-column;
-  align-items: center;
+  padding: $spacing-lg 0;
+  gap: $spacing-md;
+  @include margin-x;
 
   &__list {
     display: grid;
@@ -12,6 +14,18 @@
 
   &__cards {
     @include flex-column;
-    align-items: center;
+    padding: $spacing-xs;
+    border: 0.0625rem solid $color-border;
+    border-radius: $radius-sm;
+    gap: $spacing-xs;
+
+    img {
+      width: 100%;
+      border-radius: $radius-sm;
+    }
+
+    h3 {
+      padding: 0 $spacing-xs;
+    }
   }
 }
