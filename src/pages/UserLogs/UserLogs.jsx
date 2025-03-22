@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./UserLogs.scss";
 import { Icons } from "../../icons";
-import { Trash2 } from "lucide-react";
 
 const UserLogs = () => {
   const navigate = useNavigate();
@@ -54,18 +53,14 @@ const UserLogs = () => {
       {logs.length > 0 ? (
         <div className="logs__list">
           {logs.map((log) => (
-            <div
-              key={log.log_id}
-              className="logs__cards"
-              onClick={() => navigate(`/logs/${log.log_id}`)}
-            >
+            <div key={log.log_id} className="logs__cards">
               <div className="logs__title-wrapper">
                 <p className="label">{log.title}</p>
                 <button
                   className="logs__delete"
                   onClick={() => handleDeleteLog(log.log_id)}
                 >
-                  <Trash2 />
+                  <Icons.Trash2 />
                 </button>
               </div>
               <img
