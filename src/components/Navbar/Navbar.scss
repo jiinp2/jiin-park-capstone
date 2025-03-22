@@ -29,6 +29,6 @@
   &__links {
     @include flex-row;
     align-items: center;
-    gap: $spacing-xs;
+    gap: $spacing-sm;
   }
 }

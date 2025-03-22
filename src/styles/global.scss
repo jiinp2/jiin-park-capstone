@@ -19,10 +19,13 @@ body {
 
 .button {
   &--primary {
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
     border: none;
     outline: none;
     padding: $spacing-sm $spacing-md;
-    border-radius: $radius-pill;
+    border-radius: $radius-sm;
     background-color: $color-button-primary-bg;
     font-family: $font-primary;
     font-size: 0.875rem;
@@ -31,30 +34,34 @@ body {
   }
 
   &--secondary {
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
     border: none;
     outline: none;
-    padding: $spacing-sm $spacing-md;
-    border-radius: $radius-pill;
+    padding: $spacing-xs $spacing-sm;
+    border: 0.0625rem solid $color-border;
+    border-radius: $radius-sm;
     background-color: $color-button-secondary-bg;
     font-family: $font-primary;
     font-size: 0.875rem;
-    color: $color-font-primary;
+    color: $color-font-secondary;
     font-weight: 600;
   }
 
   &--icon {
     @include flex-row;
+    align-items: center;
+    justify-content: center;
     border: none;
     outline: none;
     padding: $spacing-sm $spacing-md;
-    border-radius: $radius-pill;
+    border-radius: $radius-sm;
     background-color: $color-button-primary-bg;
     font-family: $font-primary;
     font-size: 0.875rem;
     color: $color-font-alternate;
     font-weight: 600;
-    align-items: center;
-    justify-content: center;
     gap: $spacing-xxs;
 
     svg {
@@ -67,7 +74,7 @@ body {
 .link {
   font-family: $font-primary;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 a {

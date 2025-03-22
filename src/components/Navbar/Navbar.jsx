@@ -10,7 +10,9 @@ function Navbar() {
         <h2 className="logo-text">Focal</h2>
       </Link>
       <div className="header__links">
-        <p className="link">Explore</p>
+        <Link to="/logs" className="link">
+          Explore
+        </Link>
         <button className="button--secondary">Login</button>
       </div>
     </header>

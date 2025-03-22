@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./UserLogs.scss";
 
 const UserLogs = () => {
@@ -28,7 +28,7 @@ const UserLogs = () => {
 
   return (
     <section className="logs">
-      <h1>Your Logs</h1>
+      <h1>Saved Logs</h1>
       {logs.length > 0 ? (
         <div className="logs__list">
           {logs.map((log) => (
@@ -42,7 +42,12 @@ const UserLogs = () => {
                 src={`${import.meta.env.VITE_API_URL}${log.cover_image}`}
                 alt={log.title}
               />
-              <button className="button--secondary">View Log</button>
+              <Link
+                to={`/log/${log.log_id}/edit`}
+                className="button--secondary"
+              >
+                View Log
+              </Link>
             </div>
           ))}
         </div>

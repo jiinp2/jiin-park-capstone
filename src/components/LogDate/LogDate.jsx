@@ -3,15 +3,25 @@ import { useEffect } from "react";
 import "./LogDate.scss";
 
 const LogDate = ({ timestamps, onTitleFormat }) => {
-  if (!timestamps.length) return <h2 className="log-title">Log</h2>;
+  // Sorted timestamps
+  const sortedDates = timestamps
+    .filter(Boolean)
+    .map((t) => new Date(t))
+    .filter((date) => !isNaN(date))
+    .sort((a, b) => a - b);
 
-  const sortedDates = timestamps.map((t) => new Date(t)).sort((a, b) => a - b);
+  // Fallback heading
+  if (!sortedDates.length) return <h2 className="log-title">Log</h2>;
+
+  // Extract earlist and altest dates
   const startDate = sortedDates[0];
   const endDate = sortedDates[sortedDates.length - 1];
 
+  // Check for year and month
   const sameYear = startDate.getFullYear() === endDate.getFullYear();
   const sameMonth = startDate.getMonth() === endDate.getMonth();
 
+  // Date range formatting
   let dateRange;
   if (sameMonth) {
     dateRange = `${format(startDate, "MMM d")} - ${format(endDate, "d, yyyy")}`;
@@ -27,6 +37,7 @@ const LogDate = ({ timestamps, onTitleFormat }) => {
     )}`;
   }
 
+  // Passing title to save to database
   useEffect(() => {
     onTitleFormat && onTitleFormat(dateRange);
   }, [dateRange, onTitleFormat]);

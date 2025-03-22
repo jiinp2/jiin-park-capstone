@@ -16,6 +16,7 @@ function App() {
         <Route path={"/upload"} element={<Upload />} />
         <Route path={"/log/:logId/edit"} element={<EditLog />} />
         <Route path={"/logs"} element={<UserLogs />} />
+        <Route path={"/logs/:logId"} element={<EditLog />} />
       </Routes>
       <Footer />
     </BrowserRouter>
