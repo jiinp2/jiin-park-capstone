@@ -36,4 +36,19 @@
       padding: 0 $spacing-xs;
     }
   }
+
+  &__title-wrapper {
+    @include flex-row;
+    justify-content: space-between;
+  }
+
+  &__delete {
+    all: unset;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: $grey;
+    }
+  }
 }
