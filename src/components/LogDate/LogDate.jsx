@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { useEffect } from "react";
 import "./LogDate.scss";
 
 const LogDate = ({ timestamps, onTitleFormat }) => {
@@ -26,7 +27,9 @@ const LogDate = ({ timestamps, onTitleFormat }) => {
     )}`;
   }
 
-  onTitleFormat(dateRange);
+  useEffect(() => {
+    onTitleFormat && onTitleFormat(dateRange);
+  }, [dateRange, onTitleFormat]);
 
   return <h2 className="log-title">{dateRange}</h2>;
 };

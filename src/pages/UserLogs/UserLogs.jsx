@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./UserLogs.scss";
 
 const UserLogs = () => {
@@ -26,8 +27,27 @@ const UserLogs = () => {
   }, []);
 
   return (
-    <section>
+    <section className="logs">
       <h1>Your Logs</h1>
+      {logs.length > 0 ? (
+        <div className="logs__list">
+          {logs.map((log) => (
+            <div
+              key={log.log_id}
+              className="logs__cards"
+              onClick={() => navigate(`/logs/${log.log_id}`)}
+            >
+              <img
+                src={`${import.meta.env.VITE_API_URL}${log.cover_image}`}
+                alt={log.title}
+              />
+              <h3>{log.title}</h3>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>No logs saved yet.</p>
+      )}
     </section>
   );
 };

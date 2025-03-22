@@ -1,3 +1,17 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
+
+.logs {
+  @include flex-column;
+  align-items: center;
+
+  &__list {
+    display: grid;
+  }
+
+  &__cards {
+    @include flex-column;
+    align-items: center;
+  }
+}

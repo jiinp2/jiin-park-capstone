@@ -4,7 +4,6 @@ import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "./LogMap.scss";
 import ImageMarker from "../ImageMarker/ImageMarker";
-import LogDate from "../LogDate/LogDate";
 
 const LogMap = ({ images }) => {
   const timestamps = images.map((img) => img.timestamp).filter(Boolean);
@@ -28,7 +27,6 @@ const LogMap = ({ images }) => {
 
   return (
     <div className="map-wrapper">
-      <LogDate timestamps={timestamps} />
       <MapContainer
         className="map-container"
         key={mapCenter.join(",")}
