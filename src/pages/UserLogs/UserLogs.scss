@@ -26,8 +26,10 @@
     gap: $spacing-xs;
 
     img {
+      aspect-ratio: 1/1;
       width: 100%;
       border-radius: $radius-sm;
+      object-fit: cover;
     }
 
     p {

@@ -33,7 +33,7 @@
   img {
     aspect-ratio: 1/1;
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: $radius-sm;
     object-fit: cover;
   }
 }
