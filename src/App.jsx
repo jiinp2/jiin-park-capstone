@@ -3,7 +3,7 @@ import "./App.scss";
 import Home from "./pages/Home/Home";
 import Upload from "./pages/Upload/Upload";
 import Navbar from "./components/Navbar/Navbar";
-import EditLog from "./pages/EditLog/Editlog";
+import EditLog from "./pages/EditLog/EditLog";
 import Footer from "./components/Footer/Footer";
 import UserLogs from "./pages/UserLogs/UserLogs";
 
