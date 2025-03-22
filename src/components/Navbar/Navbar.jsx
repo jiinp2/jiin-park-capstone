@@ -9,7 +9,10 @@ function Navbar() {
         <img src={logo} alt="logo" />
         <h2 className="logo-text">Focal</h2>
       </Link>
-      <button className="button--secondary">Login</button>
+      <div className="header__links">
+        <p className="link">Explore</p>
+        <button className="button--secondary">Login</button>
+      </div>
     </header>
   );
 }

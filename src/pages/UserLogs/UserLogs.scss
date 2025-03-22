@@ -9,14 +9,20 @@
   @include margin-x;
 
   &__list {
-    display: grid;
+    @include flex-column;
+    gap: $spacing-sm;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    }
   }
 
   &__cards {
     @include flex-column;
     padding: $spacing-xs;
     border: 0.0625rem solid $color-border;
-    border-radius: $radius-sm;
+    border-radius: $radius-xs;
     gap: $spacing-xs;
 
     img {
@@ -24,7 +30,7 @@
       border-radius: $radius-sm;
     }
 
-    h3 {
+    p {
       padding: 0 $spacing-xs;
     }
   }

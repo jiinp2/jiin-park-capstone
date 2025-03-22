@@ -37,11 +37,12 @@ const UserLogs = () => {
               className="logs__cards"
               onClick={() => navigate(`/logs/${log.log_id}`)}
             >
+              <p className="label">{log.title}</p>
               <img
                 src={`${import.meta.env.VITE_API_URL}${log.cover_image}`}
                 alt={log.title}
               />
-              <h3>{log.title}</h3>
+              <button className="button--secondary">View Log</button>
             </div>
           ))}
         </div>

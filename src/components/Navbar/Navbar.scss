@@ -25,4 +25,10 @@
       height: 2rem;
     }
   }
+
+  &__links {
+    @include flex-row;
+    align-items: center;
+    gap: $spacing-xs;
+  }
 }
