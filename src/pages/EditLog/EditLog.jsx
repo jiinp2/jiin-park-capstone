@@ -47,6 +47,11 @@ const EditLog = () => {
     const coverImagePath = images[0]?.file_path || "/default-cover.jpg";
 
     try {
+      console.log("Saving log with:", {
+        logId,
+        title,
+        coverImagePath,
+      });
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/logs`, {
         method: "POST",
         headers: {
