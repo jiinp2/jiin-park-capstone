@@ -8,9 +8,13 @@ import ImageMarker from "../ImageMarker/ImageMarker";
 const LogMap = ({ images }) => {
   const timestamps = images.map((img) => img.timestamp).filter(Boolean);
   // Filter images that have coordinates
-  const validLocations = images.filter(
-    (image) => image.latitude && image.longitude
-  );
+  const validLocations = images
+    .filter((image) => image.latitude && image.longitude)
+    .map((image) => ({
+      ...image,
+      latitude: Number(image.latitude),
+      longitude: Number(image.longitude),
+    }));
 
   // Calculate map center based on average of locations
   const mapCenter =

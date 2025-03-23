@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./EditLog.scss";
 import LogMap from "../../components/LogMap/LogMap";
 import CommentSection from "../../components/CommentSection/CommentSection";
-import LogDate from "../../components/LogDate/LogDate";
 
 const EditLog = () => {
   const { logId } = useParams();
@@ -11,7 +10,7 @@ const EditLog = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [imageComments, setImageComments] = useState({});
-  const [logTitle, setLogTitle] = useState("");
+  const [log, setLog] = useState(null);
 
   // Fetch Images
   useEffect(() => {
@@ -27,6 +26,7 @@ const EditLog = () => {
         const data = await response.json();
         console.log("Fetched images:", data.images);
         setImages(data.images);
+        setLog(data.log);
       } catch (error) {
         console.error("Error fetching images:", error);
       } finally {
@@ -43,7 +43,7 @@ const EditLog = () => {
       return;
     }
 
-    const title = logTitle;
+    const title = log?.title;
     const coverImagePath = images[0]?.file_path || "/default-cover.jpg";
 
     try {
@@ -69,10 +69,7 @@ const EditLog = () => {
 
   return (
     <section className="edit-log">
-      <LogDate
-        timestamps={images.map((img) => img.timestamp)}
-        onTitleFormat={setLogTitle}
-      />
+      <h2 className="log-title">{log?.title || "Log"}</h2>
       <LogMap images={images} />
       <div className="images-list">
         {images.length ? (
