@@ -6,6 +6,10 @@ A travel journaling web app that helps users document meaningful journeys throug
 
 **Focal** lets users upload photos, extract location metadata, and create personal travel logs visualized on a map.
 
+## 📸 Screenshots
+![focal-screenshot-bg](https://github.com/user-attachments/assets/0bf5545e-fdf2-4709-8c7e-e88da9ff3410)
+
+
 ## ⚙️ Tech Stack
 
 **Frontend:**
