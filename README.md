@@ -1,6 +1,6 @@
 # 🗺️ Focal
 
-A travel journaling web app that helps users document meaningful journeys through photos, notes, and interactive maps. Built as a capstone project for the BrainStation Software Engineering Bootcamp.
+A travel journaling web app that helps users document meaningful journeys through photos, notes, and interactive maps. Built as a capstone project for the BrainStation Software Engineering Bootcamp. This is the frontend repository that accompanies the [backend](https://github.com/jiinp2/jiin-park-capstone-api).
 
 ## 📖 Description
 
